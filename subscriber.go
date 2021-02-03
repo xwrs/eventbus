@@ -5,8 +5,8 @@ import (
 )
 
 type Subscriber interface {
-	 GetEventName() string
+	GetEventName() string
 	GetEventType() reflect.Type
-	 GetTopicName() string
-	 AcceptEvent(event *IntegrationEvent)
+	GetTopicName() string
+	AcceptEvent(event interface{})
 }

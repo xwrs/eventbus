@@ -1,6 +1,7 @@
 package main
 
 import (
+	"fmt"
 	"github.com/xwrs/eventbus"
 	"reflect"
 )
@@ -11,26 +12,28 @@ type DummyEventSubscriber struct {
 }
 
 func (*DummyEventSubscriber) GetEventName() string {
-	event := &DummyPayload{}
+	event := &DummyEvent{}
 	return reflect.TypeOf(event).Elem().Name()
 }
 
 func (*DummyEventSubscriber) GetTopicName() string {
-	event := &DummyPayload{}
+	event := &DummyEvent{}
 	return reflect.TypeOf(event).Elem().PkgPath()
 }
 
 func(*DummyEventSubscriber) GetEventType() reflect.Type  {
-	event := &DummyPayload{}
-	return reflect.TypeOf(event)
+	event := &DummyEvent{}
+	return reflect.TypeOf(event).Elem()
 }
 
-func (s *DummyEventSubscriber) AcceptEvent(event *eventbus.IntegrationEvent)  {
+func (s *DummyEventSubscriber) AcceptEvent(event interface{})  {
+	dummyEvent := event.(*DummyEvent)
+	fmt.Print(dummyEvent)
 	return
 }
 
 func NewDummyEventSubscriber() (s *DummyEventSubscriber) {
-	event := &DummyPayload{}
+	event := &DummyEvent{}
 	return &DummyEventSubscriber{
 		eventType: reflect.TypeOf(event),
 	}

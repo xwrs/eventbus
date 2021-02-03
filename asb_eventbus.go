@@ -20,13 +20,13 @@ func (t *AzureServiceBus) Init() {
 	t.client = client
 }
 
-func (t *AzureServiceBus) Publish(event *IntegrationEvent) {
+func (t *AzureServiceBus) Publish(event *EventContainer) {
 	ctx := context.Background()
 	eventName := event.GetName()
 	topicName := event.GetTopicName()
 
 	topic, _ := t.client.NewTopic(topicName)
-	messageBytes, _ := json.Marshal(event)
+	messageBytes, _ := json.Marshal(event.Payload)
 	message := servicebus.NewMessage(messageBytes)
 	message.Label = eventName
 	if event.Metadata != nil {
@@ -71,12 +71,12 @@ func (t *AzureServiceBus) Subscribe(subscriber *Subscriber) {
 			if receiver, err := subscription.NewReceiver(ctx); err == nil {
 				var handlerFunc servicebus.HandlerFunc
 				handlerFunc = func(ctx context.Context, message *servicebus.Message) error {
-					payload := reflect.New(eventType)
-					json.Unmarshal(message.Data, payload)
-					event := NewIntegrationEvent(payload, &message.UserProperties)
-
+					payload := reflect.New(eventType).Interface()
+					if err := json.Unmarshal(message.Data, payload); err != nil {
+						panic(err)
+					}
 					message.Complete(ctx)
-					(*subscriber).AcceptEvent(event)
+					(*subscriber).AcceptEvent(payload)
 					return nil
 				}
 				receiver.Listen(ctx, handlerFunc)

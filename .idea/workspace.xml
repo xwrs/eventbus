@@ -2,13 +2,15 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="d1539806-6741-4cb2-af61-94876ab081af" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/.gitignore" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/asb_eventbus.go" beforeDir="false" afterPath="$PROJECT_DIR$/asb_eventbus.go" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/dummy_payload.go" beforeDir="false" afterPath="$PROJECT_DIR$/test/dummy_payload.go" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/integration_event.go" beforeDir="false" afterPath="$PROJECT_DIR$/integration_event.go" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/main.go" beforeDir="false" afterPath="$PROJECT_DIR$/test/main.go" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/eventbus.go" beforeDir="false" afterPath="$PROJECT_DIR$/eventbus.go" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/integration_event.go" beforeDir="false" afterPath="$PROJECT_DIR$/event_container.go" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/memory_eventbus.go" beforeDir="false" afterPath="$PROJECT_DIR$/memory_eventbus.go" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/subscriber.go" beforeDir="false" afterPath="$PROJECT_DIR$/subscriber.go" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/test/dummy_payload.go" beforeDir="false" afterPath="$PROJECT_DIR$/test/dummy_event.go" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/test/dummy_subscriber.go" beforeDir="false" afterPath="$PROJECT_DIR$/test/dummy_subscriber.go" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/test/main.go" beforeDir="false" afterPath="$PROJECT_DIR$/test/main.go" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -91,23 +93,13 @@
       <breakpoints>
         <line-breakpoint enabled="true" type="DlvLineBreakpoint">
           <url>file://$PROJECT_DIR$/test/dummy_subscriber.go</url>
-          <line>28</line>
+          <line>31</line>
           <option name="timeStamp" value="7" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="DlvLineBreakpoint">
-          <url>file://$PROJECT_DIR$/test/main.go</url>
-          <line>17</line>
-          <option name="timeStamp" value="11" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="DlvLineBreakpoint">
           <url>file://$PROJECT_DIR$/asb_eventbus.go</url>
-          <line>73</line>
-          <option name="timeStamp" value="14" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="DlvLineBreakpoint">
-          <url>file://$PROJECT_DIR$/test/dummy_subscriber.go</url>
-          <line>24</line>
-          <option name="timeStamp" value="15" />
+          <line>74</line>
+          <option name="timeStamp" value="17" />
         </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>

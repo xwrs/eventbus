@@ -2,14 +2,14 @@ package eventbus
 
 // Memory EventBus implementation
 type Memory struct {
-	subscribers map[string]func(event *IntegrationEvent)
+	subscribers map[string]func(event interface{})
 }
 
 func (t *Memory) Init() {
-	t.subscribers = make(map[string]func(event *IntegrationEvent))
+	t.subscribers = make(map[string]func(event interface{}))
 }
 
-func (t *Memory) Publish(event *IntegrationEvent) {
+func (t *Memory) Publish(event *EventContainer) {
 	s := t.subscribers[event.name]
 
 	if s != nil {

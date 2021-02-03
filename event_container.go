@@ -2,23 +2,23 @@ package eventbus
 
 import "reflect"
 
-type IntegrationEvent struct {
+type EventContainer struct {
 	name      string
 	topicName string
 	Metadata  *map[string]interface{}
 	Payload   interface{}
 }
 
-func (e *IntegrationEvent) GetName() string {
+func (e *EventContainer) GetName() string {
 	return e.name
 }
 
-func (e *IntegrationEvent) GetTopicName() string {
+func (e *EventContainer) GetTopicName() string {
 	return e.topicName
 }
 
-func NewIntegrationEvent(payload interface{}, metadata *map[string]interface{}) *IntegrationEvent {
-	return &IntegrationEvent{
+func NewEventContainer(payload interface{}, metadata *map[string]interface{}) *EventContainer {
+	return &EventContainer{
 		name:      reflect.TypeOf(payload).Elem().Name(),
 		topicName: reflect.TypeOf(payload).Elem().PkgPath(),
 		Metadata:  metadata,

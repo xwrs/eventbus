@@ -15,10 +15,10 @@ func main() {
 	sub = NewDummyEventSubscriber()
 
 	eventBus.Subscribe(&sub)
-	//eventBus.Publish(eventbus.NewIntegrationEvent(&DummyPayload{
-	//	A: "test a",
-	//	B: "test b",
-	//}, nil))
+	eventBus.Publish(eventbus.NewEventContainer(&DummyEvent{
+		A: "test a",
+		B: "test b",
+	}, nil))
 	time.Sleep(time.Second*30)
 
 }

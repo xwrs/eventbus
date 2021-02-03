@@ -1,6 +1,6 @@
 package main
 
-type DummyPayload struct {
+type DummyEvent struct {
 	A string
 	B string
 }
