@@ -29,7 +29,7 @@ func (t *AzureServiceBus) Publish(event *IntegrationEvent) {
 	messageBytes, _ := json.Marshal(event)
 	message := servicebus.NewMessage(messageBytes)
 	message.Label = eventName
-	if *event.Metadata != nil {
+	if event.Metadata != nil {
 		for k, v := range *event.Metadata {
 			message.UserProperties[k] = v
 		}

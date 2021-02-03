@@ -19,8 +19,8 @@ func (e *IntegrationEvent) GetTopicName() string {
 
 func NewIntegrationEvent(payload interface{}, metadata *map[string]interface{}) *IntegrationEvent {
 	return &IntegrationEvent{
-		name:      reflect.TypeOf(payload).Name(),
-		topicName: reflect.TypeOf(payload).PkgPath(),
+		name:      reflect.TypeOf(payload).Elem().Name(),
+		topicName: reflect.TypeOf(payload).Elem().PkgPath(),
 		Metadata:  metadata,
 		Payload:   payload,
 	}

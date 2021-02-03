@@ -10,7 +10,7 @@ func (t *Memory) Init() {
 }
 
 func (t *Memory) Publish(event *IntegrationEvent) {
-	s := t.subscribers[event.Name]
+	s := t.subscribers[event.name]
 
 	if s != nil {
 		s(event)

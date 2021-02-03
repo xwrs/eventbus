@@ -1,4 +1,4 @@
-package eventbus
+package main
 
 type DummyPayload struct {
 	A string
