@@ -17,10 +17,16 @@ func (e *EventContainer) GetTopicName() string {
 	return e.topicName
 }
 
-func NewEventContainer(payload interface{}, metadata *map[string]interface{}) *EventContainer {
+func NewEventContainerReflected(payload interface{}, metadata *map[string]interface{}) *EventContainer {
+	eventName := reflect.TypeOf(payload).Elem().Name()
+	topicName := reflect.TypeOf(payload).Elem().PkgPath()
+	return NewEventContainer(eventName, topicName, payload, metadata)
+}
+
+func NewEventContainer(name string, topicName string, payload interface{}, metadata *map[string]interface{}) *EventContainer {
 	return &EventContainer{
-		name:      reflect.TypeOf(payload).Elem().Name(),
-		topicName: reflect.TypeOf(payload).Elem().PkgPath(),
+		name:      name,
+		topicName: topicName,
 		Metadata:  metadata,
 		Payload:   payload,
 	}

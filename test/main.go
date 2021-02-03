@@ -15,7 +15,7 @@ func main() {
 	sub = NewDummyEventSubscriber()
 
 	eventBus.Subscribe(&sub)
-	eventBus.Publish(eventbus.NewEventContainer(&DummyEvent{
+	eventBus.Publish(eventbus.NewEventContainerReflected(&DummyEvent{
 		A: "test a",
 		B: "test b",
 	}, nil))
