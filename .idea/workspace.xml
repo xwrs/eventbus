@@ -5,12 +5,6 @@
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/asb_eventbus.go" beforeDir="false" afterPath="$PROJECT_DIR$/asb_eventbus.go" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/eventbus.go" beforeDir="false" afterPath="$PROJECT_DIR$/eventbus.go" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/integration_event.go" beforeDir="false" afterPath="$PROJECT_DIR$/event_container.go" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/memory_eventbus.go" beforeDir="false" afterPath="$PROJECT_DIR$/memory_eventbus.go" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/subscriber.go" beforeDir="false" afterPath="$PROJECT_DIR$/subscriber.go" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/test/dummy_payload.go" beforeDir="false" afterPath="$PROJECT_DIR$/test/dummy_event.go" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/test/dummy_subscriber.go" beforeDir="false" afterPath="$PROJECT_DIR$/test/dummy_subscriber.go" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/test/main.go" beforeDir="false" afterPath="$PROJECT_DIR$/test/main.go" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -97,9 +91,24 @@
           <option name="timeStamp" value="7" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="DlvLineBreakpoint">
+          <url>file://$PROJECT_DIR$/test/main.go</url>
+          <line>16</line>
+          <option name="timeStamp" value="18" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="DlvLineBreakpoint">
           <url>file://$PROJECT_DIR$/asb_eventbus.go</url>
-          <line>74</line>
-          <option name="timeStamp" value="17" />
+          <line>86</line>
+          <option name="timeStamp" value="19" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="DlvLineBreakpoint">
+          <url>file://$PROJECT_DIR$/asb_eventbus.go</url>
+          <line>95</line>
+          <option name="timeStamp" value="20" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="DlvLineBreakpoint">
+          <url>file://$PROJECT_DIR$/asb_eventbus.go</url>
+          <line>51</line>
+          <option name="timeStamp" value="22" />
         </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>

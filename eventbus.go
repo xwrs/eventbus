@@ -5,5 +5,5 @@ package eventbus
 type EventBus interface {
 	Init()
 	Publish(event *EventContainer)
-	Subscribe(subscriber *Subscriber)
+	Subscribe(subscriber *Subscriber) error
 }
