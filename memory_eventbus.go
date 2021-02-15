@@ -17,6 +17,7 @@ func (t *Memory) Publish(event *EventContainer) {
 	}
 }
 
-func (t *Memory) Subscribe(subscriber *Subscriber) {
-	t.subscribers[(*subscriber).GetEventName()]=(*subscriber).AcceptEvent
+func (t *Memory) Subscribe(subscriber *Subscriber) error {
+	t.subscribers[(*subscriber).GetEventName()] = (*subscriber).AcceptEvent
+	return nil
 }

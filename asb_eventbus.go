@@ -3,8 +3,9 @@ package eventbus
 import (
 	"context"
 	"encoding/json"
-	servicebus "github.com/Azure/azure-service-bus-go"
 	"reflect"
+
+	servicebus "github.com/Azure/azure-service-bus-go"
 )
 
 type AzureServiceBus struct {
